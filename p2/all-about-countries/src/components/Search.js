@@ -3,6 +3,7 @@ import countries from "../Data";
 import Select from "react-select";
 import axios from "axios";
 import Map from "./Map";
+import Information from "./Information";
 
 const COUNTRIES_API_URL = "https://restcountries.eu/rest/v2/alpha/";
 
@@ -41,7 +42,10 @@ class Search extends Component {
         {this.state.isGettingData ? (
           "Select a country"
         ) : (
-          <Map country={this.state.selectedCountry} />
+          <div>
+            <Map country={this.state.selectedCountry} />
+            <Information country={this.state.selectedCountry} />
+          </div>
         )}
       </React.Fragment>
     );
