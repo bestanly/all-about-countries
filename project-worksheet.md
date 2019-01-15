@@ -8,13 +8,13 @@ You are **responsible** for scheduling time with your squad to seek approval for
 
 | Day   | Deliverable                                          | Status     |
 | ----- | ---------------------------------------------------- | ---------- |
-| Day 1 | Project Description                                  | Incomplete |
-| Day 2 | Wireframes / Priority Matrix / Functional Components | Incomplete |
-| Day 3 | Core Application Structure (HTML, CSS, etc.)         | Incomplete |
-| Day 4 | Pseudocode / actual code                             | Incomplete |
-| Day 5 | Initial Clickable Model                              | Incomplete |
-| Day 6 | MVP                                                  | Incomplete |
-| Day 7 | Present                                              | Incomplete |
+| Day 1 | Project Description                                  | Complete   |
+| Day 1 | Wireframes / Priority Matrix / Functional Components | Complete   |
+| Day 2 | Core Application Structure (HTML, CSS, etc.)         | Incomplete |
+| Day 3 | Pseudocode / actual code                             | Incomplete |
+| Day 3 | Initial Clickable Model                              | Incomplete |
+| Day 4 | MVP                                                  | Incomplete |
+| Day 5 | Present                                              | Incomplete |
 
 ## Project Description
 
@@ -53,8 +53,6 @@ The functionality will then be divided into two separate lists: MPV and PostMVP.
 
 Based on the initial logic defined in the previous sections try and breakdown the logic further into stateless/stateful components.
 
-#### SAMPLE.....
-
 | Component   |                      Description                      |
 | ----------- | :---------------------------------------------------: |
 | App         |        It's going to serve as a main container        |
@@ -62,20 +60,25 @@ Based on the initial logic defined in the previous sections try and breakdown th
 | Information |    Renders information about the selected country     |
 | Marker      | Renders a pin on the map showing the country location |
 
-Time frames are also key in the development cycle. You have limited time to code all phases of the game. Your estimates can then be used to evalute game possibilities based on time needed and the actual time you have before game must be submitted. It's always best to pad the time by a few hours so that you account for the unknown so add and additional hour or two to each component to play it safe.
+## Time Frames
 
-#### SAMPLE.....
+Time frames are also key in the development cycle. You have limited time to code all phases of the game. Your estimates can then be used to evalute game possibilities based on time needed and the actual time you have before game must be submitted. It's always best to pad the time by a few hours so that you account for the unknown so add and additional hour or two to each component to play it safe.
 
 | Component                            | Priority | Estimated Time | Actual Time |
 | ------------------------------------ | :------: | :------------: | :---------: |
 | Adding select box                    |    H     |      3hrs      |   3.5hrs    |
-| Get the API country information      |    H     |      3hrs      |   2.5hrs    |
-| Render the API country information   |    H     |      3hrs      |   2.5hrs    |
-| Render API map                       |    H     |      3hrs      |   2.5hrs    |
-| Show the country location on the map |    M     |      3hrs      |   2.5hrs    |
-| Styling                              |    M     |      3hrs      |   2.5hrs    |
-| PostMVPs                             |    L     |      3hrs      |   2.5hrs    |
-| Total                                |    H     |      6hrs      |    5hrs     |
+| Get the API country information      |    H     |      4hrs      |   2.5hrs    |
+| Render the API country information   |    H     |      4hrs      |   2.5hrs    |
+| Render API map                       |    H     |      4hrs      |   2.5hrs    |
+| Show the country location on the map |    M     |      4hrs      |   2.5hrs    |
+| Styling                              |    M     |      5hrs      |   2.5hrs    |
+| PostMVPs                             |    L     |      5hrs      |   2.5hrs    |
+| Total                                |          |     29hrs      |    5hrs     |
+
+## API's Links
+
+- [Mapbox](https://www.mapbox.com/)
+- [Rest Countries](https://restcountries.eu/)
 
 ## Helper Functions
 
