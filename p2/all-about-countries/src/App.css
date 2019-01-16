@@ -1,5 +1,7 @@
-body {
+body,
+html {
   font-family: "Open Sans", sans-serif;
+  background-color: whitesmoke;
 }
 .app {
   min-height: 100vh;
