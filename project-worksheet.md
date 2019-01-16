@@ -11,8 +11,8 @@ You are **responsible** for scheduling time with your squad to seek approval for
 | Day 1 | Project Description                                  | Complete   |
 | Day 1 | Wireframes / Priority Matrix / Functional Components | Complete   |
 | Day 2 | Core Application Structure (HTML, CSS, etc.)         | Incomplete |
-| Day 3 | Pseudocode / actual code                             | Incomplete |
-| Day 3 | Initial Clickable Model                              | Incomplete |
+| Day 3 | Pseudocode / actual code                             | Complete   |
+| Day 3 | Initial Clickable Model                              | Complete   |
 | Day 4 | MVP                                                  | Incomplete |
 | Day 5 | Present                                              | Incomplete |
 
@@ -34,15 +34,15 @@ The functionality will then be divided into two separate lists: MPV and PostMVP.
 
 #### MVP
 
-- The user can pick the country in a select box.
-- Render country information on the page.
-- Render a map on the screen showing the country location.
-- Render a location pin insinde the map
+- The user can pick the country in a select box. &#10003;
+- Render country information on the page. &#10003;
+- Render a map on the screen showing the country location. &#10003;
+- Render a location pin insinde the map. &#10003;
 
 #### PostMVP
 
 - Landing page.
-- Use a search bar to filter through the countries on the select element.
+- Use a search bar to filter through the countries on the select element. &#10003;
 - Checkboxes making the user decide what information they want to see.
 
 ## [React Architectural Design](https://photos.app.goo.gl/qjdD6iHLRSxhJQeg8)
