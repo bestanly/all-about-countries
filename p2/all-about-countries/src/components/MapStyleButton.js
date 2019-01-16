@@ -7,7 +7,7 @@ const MapStyleButton = props => {
       <input
         onChange={props.handleStyleChange}
         type="radio"
-        name="mapStyleOptions"
+        name={props.name}
         value={props.option.value}
       />
       {props.option.name}

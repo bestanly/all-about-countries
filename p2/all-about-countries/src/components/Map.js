@@ -15,12 +15,12 @@ class Map extends Component {
         mapStyle: ""
       },
       mapStyleOptions: [
-        { name: "streets", value: "mapbox://styles/mapbox/streets-v9" },
-        { name: "basic", value: "mapbox://styles/mapbox/basic-v9" },
-        { name: "satellite", value: "mapbox://styles/mapbox/satellite-v9" },
-        { name: "dark", value: "mapbox://styles/mapbox/dark-v9" },
-        { name: "bright", value: "mapbox://styles/mapbox/bright-v9" },
-        { name: "light", value: "mapbox://styles/mapbox/light-v9" }
+        { name: "Streets", value: "mapbox://styles/mapbox/streets-v9" },
+        { name: "Basic", value: "mapbox://styles/mapbox/basic-v9" },
+        { name: "Satellite", value: "mapbox://styles/mapbox/satellite-v9" },
+        { name: "Dark", value: "mapbox://styles/mapbox/dark-v9" },
+        { name: "Bright", value: "mapbox://styles/mapbox/bright-v9" },
+        { name: "Light", value: "mapbox://styles/mapbox/light-v9" }
       ]
     };
   }
@@ -37,17 +37,18 @@ class Map extends Component {
   };
   render() {
     const { viewport } = this.state;
-    const { mapStyleOptions } = this.state;
     const { country } = this.props;
     const latitude = country.latlng[0];
     const longitude = country.latlng[1];
 
     return (
       <React.Fragment>
-        {this.state.mapStyleOptions.map(option => {
+        {this.state.mapStyleOptions.map((option, index) => {
           return (
             <MapStyleButton
+              key={index}
               option={option}
+              name="mapStyleOptions"
               handleStyleChange={this.handleStyleChange}
             />
           );
@@ -65,7 +66,11 @@ class Map extends Component {
           zoom={viewport.zoom}
           mapboxApiAccessToken={MAPBOX_ACCESS_TOKEN}
           onViewportChange={viewport => {
-            this.setState({ viewport: { ...viewport } });
+            this.setState(prevState => {
+              return {
+                viewport: { ...viewport, mapStyle: prevState.viewport.mapStyle }
+              };
+            });
           }}
         >
           <Marker
