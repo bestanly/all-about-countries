@@ -8,17 +8,32 @@ import Information from "./Information";
 const COUNTRIES_API_URL = "https://restcountries.eu/rest/v2/alpha/";
 
 class Search extends Component {
-  state = {
-    selectedOption: null,
-    countries,
-    selectedCountry: {},
-    isGettingData: true
+  constructor(props) {
+    super(props);
+    this.state = {
+      selectedOption: null,
+      countries,
+      selectedCountry: {},
+      isGettingData: true
+    };
+  }
+  componentDidMount = () => {
+    if (this.props.match.params.code) {
+      const code = this.props.match.params.code.toUpperCase();
+      countries.forEach(country => {
+        if (country.value === code) {
+          this.setState({
+            selectedOption: country
+          });
+        }
+      });
+    }
   };
   handleChange = selectedOption => {
     this.setState({ selectedOption });
   };
   handleSubmit = async e => {
-    e.preventDefault();
+    e.preventDefault() ? e.preventDefault() : (e = null);
     const response = await axios(
       COUNTRIES_API_URL + this.state.selectedOption.value
     );
@@ -31,16 +46,22 @@ class Search extends Component {
   render() {
     return (
       <React.Fragment>
-        <form onSubmit={this.handleSubmit} className="row">
-          <div className="col">
+        <form
+          onSubmit={this.handleSubmit}
+          name="searchForm"
+          className="row search-form"
+        >
+          <div className="form-group col-8">
             <Select
               options={this.state.countries}
               value={this.state.selectedOption}
               onChange={this.handleChange}
             />
           </div>
-          <div className="col">
-            <button type="submit">Search</button>
+          <div className="form-group col-4">
+            <button type="submit" className="btn btn-primary">
+              Search
+            </button>
           </div>
         </form>
         {this.state.isGettingData ? (

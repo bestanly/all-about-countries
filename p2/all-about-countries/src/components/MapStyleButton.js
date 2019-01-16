@@ -1,17 +1,20 @@
 import React from "react";
 
 const MapStyleButton = props => {
-  console.log(props.option);
   return (
-    <label>
+    <div className="form-check form-check-inline">
       <input
+        className="form-check-input"
         onChange={props.handleStyleChange}
         type="radio"
+        id={props.option.value}
         name={props.name}
         value={props.option.value}
       />
-      {props.option.name}
-    </label>
+      <label className="form-check-label" htmlFor={props.option.value}>
+        {props.option.name}
+      </label>
+    </div>
   );
 };
 

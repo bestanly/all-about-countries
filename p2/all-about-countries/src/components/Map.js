@@ -7,8 +7,8 @@ class Map extends Component {
     super(props);
     this.state = {
       viewport: {
-        width: 400,
-        height: 400,
+        width: "100%",
+        height: 300,
         latitude: props.country.latlng[0],
         longitude: props.country.latlng[1],
         zoom: 4,
@@ -42,17 +42,7 @@ class Map extends Component {
     const longitude = country.latlng[1];
 
     return (
-      <React.Fragment>
-        {this.state.mapStyleOptions.map((option, index) => {
-          return (
-            <MapStyleButton
-              key={index}
-              option={option}
-              name="mapStyleOptions"
-              handleStyleChange={this.handleStyleChange}
-            />
-          );
-        })}
+      <div className="col map">
         <ReactMapGL
           mapStyle={
             viewport.mapStyle
@@ -87,7 +77,17 @@ class Map extends Component {
             />
           </Marker>
         </ReactMapGL>
-      </React.Fragment>
+        {this.state.mapStyleOptions.map((option, index) => {
+          return (
+            <MapStyleButton
+              key={index}
+              option={option}
+              name="mapStyleOptions"
+              handleStyleChange={this.handleStyleChange}
+            />
+          );
+        })}
+      </div>
     );
   }
 }

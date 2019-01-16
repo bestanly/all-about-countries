@@ -1,0 +1,18 @@
+body {
+  font-family: "Open Sans", sans-serif;
+}
+
+.title {
+  font-family: "arial", sans-serif;
+  padding: 10px;
+  text-align: center;
+  background-color: #090c9b;
+  color: white;
+}
+.search-form {
+  background-color: #eaf6ff;
+  padding: 10px;
+}
+.map {
+  margin-top: 10px;
+}
