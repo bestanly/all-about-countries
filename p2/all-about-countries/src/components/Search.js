@@ -65,7 +65,9 @@ class Search extends Component {
           </div>
         </form>
         {this.state.isGettingData ? (
-          "Select a country"
+          <h6 style={{ textAlign: "center" }}>
+            Select a country you want to know about.
+          </h6>
         ) : (
           <div>
             <Map country={this.state.selectedCountry} />

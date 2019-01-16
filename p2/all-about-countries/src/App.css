@@ -1,13 +1,24 @@
 body {
   font-family: "Open Sans", sans-serif;
 }
-
-.title {
+.app {
+  min-height: 100vh;
+  position: relative;
+  padding-bottom: 50px;
+}
+.title,
+footer {
   font-family: "arial", sans-serif;
   padding: 10px;
   text-align: center;
   background-color: #090c9b;
   color: white;
+}
+footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
 }
 .search-form {
   background-color: #eaf6ff;

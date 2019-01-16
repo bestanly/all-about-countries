@@ -6,7 +6,7 @@ import { Route } from "react-router-dom";
 class App extends Component {
   render() {
     return (
-      <React.Fragment>
+      <div className="app">
         <header>
           <div className="title">
             <h2>All Country Information</h2>
@@ -18,7 +18,10 @@ class App extends Component {
             <Route path="/" exact component={Search} />
           </main>
         </div>
-      </React.Fragment>
+        <footer>
+          <h6>Copyright © 2019 by Stanly Rodriguez</h6>
+        </footer>
+      </div>
     );
   }
 }
