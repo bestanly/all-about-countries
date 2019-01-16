@@ -31,13 +31,17 @@ class Search extends Component {
   render() {
     return (
       <React.Fragment>
-        <form onSubmit={this.handleSubmit}>
-          <Select
-            options={this.state.countries}
-            value={this.state.selectedOption}
-            onChange={this.handleChange}
-          />
-          <button type="submit">Search</button>
+        <form onSubmit={this.handleSubmit} className="row">
+          <div className="col">
+            <Select
+              options={this.state.countries}
+              value={this.state.selectedOption}
+              onChange={this.handleChange}
+            />
+          </div>
+          <div className="col">
+            <button type="submit">Search</button>
+          </div>
         </form>
         {this.state.isGettingData ? (
           "Select a country"

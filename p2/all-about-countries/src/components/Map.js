@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import ReactMapGL, { Marker } from "react-map-gl";
+import MapStyleButton from "./MapStyleButton";
 const MAPBOX_ACCESS_TOKEN = process.env.REACT_APP_MAPBOX_ACCESS_TOKEN;
 class Map extends Component {
   constructor(props) {
@@ -8,33 +9,30 @@ class Map extends Component {
       viewport: {
         width: 400,
         height: 400,
-        latitude: 37.7577,
-        longitude: -122.4376,
-        zoom: 2,
-        mapStyle: "mapbox://styles/mapbox/streets-v9"
+        latitude: props.country.latlng[0],
+        longitude: props.country.latlng[1],
+        zoom: 4,
+        mapStyle: ""
       },
-      mapStyleOptions: {
-        streets: "mapbox://styles/mapbox/streets-v9",
-        basic: "mapbox://styles/mapbox/basic-v9",
-        satellite: "mapbox://styles/mapbox/satellite-v9",
-        dark: "mapbox://styles/mapbox/dark-v9",
-        bright: "mapbox://styles/mapbox/bright-v9",
-        light: "mapbox://styles/mapbox/light-v9"
-      }
+      mapStyleOptions: [
+        { name: "streets", value: "mapbox://styles/mapbox/streets-v9" },
+        { name: "basic", value: "mapbox://styles/mapbox/basic-v9" },
+        { name: "satellite", value: "mapbox://styles/mapbox/satellite-v9" },
+        { name: "dark", value: "mapbox://styles/mapbox/dark-v9" },
+        { name: "bright", value: "mapbox://styles/mapbox/bright-v9" },
+        { name: "light", value: "mapbox://styles/mapbox/light-v9" }
+      ]
     };
   }
   handleStyleChange = e => {
-    const { viewport } = this.state;
     const { value } = e.target;
-    this.setState({
-      viewport: {
-        width: viewport.width,
-        height: viewport.height,
-        latitude: viewport.latitude,
-        longitude: viewport.longitude,
-        zoom: viewport.zoom,
-        mapStyle: value
-      }
+    this.setState(prevStat => {
+      return {
+        viewport: {
+          ...prevStat.viewport,
+          mapStyle: value
+        }
+      };
     });
   };
   render() {
@@ -43,71 +41,32 @@ class Map extends Component {
     const { country } = this.props;
     const latitude = country.latlng[0];
     const longitude = country.latlng[1];
+
     return (
       <React.Fragment>
-        <label>
-          <input
-            onChange={this.handleStyleChange}
-            type="radio"
-            name="mapStyleOptions"
-            value={mapStyleOptions.basic}
-          />
-          Basic
-        </label>
-        <label>
-          <input
-            onChange={this.handleStyleChange}
-            type="radio"
-            name="mapStyleOptions"
-            value={mapStyleOptions.bright}
-          />
-          Bright
-        </label>
-        <label>
-          <input
-            onChange={this.handleStyleChange}
-            type="radio"
-            name="mapStyleOptions"
-            value={mapStyleOptions.dark}
-          />
-          Dark
-        </label>
-        <label>
-          <input
-            onChange={this.handleStyleChange}
-            type="radio"
-            name="mapStyleOptions"
-            value={mapStyleOptions.satellite}
-          />
-          Satellite
-        </label>
-        <label>
-          <input
-            onChange={this.handleStyleChange}
-            type="radio"
-            name="mapStyleOptions"
-            value={mapStyleOptions.streets}
-          />
-          Streets
-        </label>
-        <label>
-          <input
-            onChange={this.handleStyleChange}
-            type="radio"
-            name="mapStyleOptions"
-            value={mapStyleOptions.light}
-          />
-          Light
-        </label>
+        {this.state.mapStyleOptions.map(option => {
+          return (
+            <MapStyleButton
+              option={option}
+              handleStyleChange={this.handleStyleChange}
+            />
+          );
+        })}
         <ReactMapGL
-          mapStyle={viewport.mapStyle}
+          mapStyle={
+            viewport.mapStyle
+              ? viewport.mapStyle
+              : "mapbox://styles/mapbox/streets-v9"
+          }
           width={viewport.width}
           height={viewport.height}
           latitude={latitude}
           longitude={longitude}
           zoom={viewport.zoom}
           mapboxApiAccessToken={MAPBOX_ACCESS_TOKEN}
-          onViewportChange={viewport => this.setState({ viewport })}
+          onViewportChange={viewport => {
+            this.setState({ viewport: { ...viewport } });
+          }}
         >
           <Marker
             longitude={longitude}

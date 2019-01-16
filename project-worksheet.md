@@ -66,12 +66,12 @@ Time frames are also key in the development cycle. You have limited time to code
 
 | Component                            | Priority | Estimated Time | Actual Time |
 | ------------------------------------ | :------: | :------------: | :---------: |
-| Adding select box                    |    H     |      3hrs      |   3.5hrs    |
-| Get the API country information      |    H     |      4hrs      |   2.5hrs    |
-| Render the API country information   |    H     |      4hrs      |   2.5hrs    |
-| Render API map                       |    H     |      4hrs      |   2.5hrs    |
-| Show the country location on the map |    M     |      4hrs      |   2.5hrs    |
-| Styling                              |    M     |      5hrs      |   2.5hrs    |
+| Adding select box                    |    H     |      3hrs      |   1.5hrs    |
+| Get the API country information      |    H     |      4hrs      |    1hrs     |
+| Render the API country information   |    H     |      4hrs      |    0hrs     |
+| Render API map                       |    H     |      4hrs      |    1hrs     |
+| Show the country location on the map |    M     |      4hrs      |    1hrs     |
+| Styling                              |    M     |      5hrs      |     0rs     |
 | PostMVPs                             |    L     |      5hrs      |   2.5hrs    |
 | Total                                |          |     29hrs      |    5hrs     |
 
