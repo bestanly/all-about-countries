@@ -49,19 +49,20 @@ class Search extends Component {
         <form
           onSubmit={this.handleSubmit}
           name="searchForm"
-          className="row search-form"
+          className="form-row search-form "
         >
-          <div className="form-group col-8">
+          <div className="input-group">
             <Select
+              className="col"
               options={this.state.countries}
               value={this.state.selectedOption}
               onChange={this.handleChange}
             />
-          </div>
-          <div className="form-group col-4">
-            <button type="submit" className="btn btn-primary">
-              Search
-            </button>
+            <div className="input-group-append">
+              <button type="submit" className="btn btn-primary">
+                Search
+              </button>
+            </div>
           </div>
         </form>
         {this.state.isGettingData ? (
@@ -69,7 +70,7 @@ class Search extends Component {
             Select a country you want to know about.
           </h6>
         ) : (
-          <div>
+          <div className="row results">
             <Map country={this.state.selectedCountry} />
             <Information country={this.state.selectedCountry} />
           </div>

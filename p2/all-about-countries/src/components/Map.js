@@ -42,7 +42,7 @@ class Map extends Component {
     const longitude = country.latlng[1];
 
     return (
-      <div className="col map">
+      <div className="col-12 map">
         <ReactMapGL
           mapStyle={
             viewport.mapStyle
@@ -87,6 +87,7 @@ class Map extends Component {
             />
           );
         })}
+        <hr />
       </div>
     );
   }
