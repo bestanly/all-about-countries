@@ -2,9 +2,8 @@ import React from "react";
 import numberWithCommas from "../funtions/numberWithCommas";
 import InformationElement from "./InformationList";
 const Information = props => (
-  <div className=" col-12 row  justify-content-center">
+  <div className=" col-12 row  justify-content-center info">
     <div className="col-12 col-md-6 main-info">
-      <h5 style={{ textAlign: "center" }}>Information:</h5>
       <h1 className="country-name-h title-info" style={{ textAlign: "center" }}>
         {props.country.name}
       </h1>
@@ -38,8 +37,7 @@ const Information = props => (
       </h6>
       <h6>
         <span className="title-info">Population: </span>
-        {numberWithCommas(props.country.population)}
-        people
+        {numberWithCommas(props.country.population)} people
       </h6>
       <h6>
         <span className="title-info">Calling Codes:</span>

@@ -45,26 +45,24 @@ class Search extends Component {
 
   render() {
     return (
-      <React.Fragment>
+      <div className="search">
         <form
           onSubmit={this.handleSubmit}
           name="searchForm"
-          className="form-row search-form "
+          className="form-row search-form"
         >
-          <div className="input-group">
+          <div className="input-group justify-content-center">
             <Select
               autoFocus="true"
-              className="col"
+              className="col col-md-5"
               placeholder="Select a country"
               options={this.state.countries}
               value={this.state.selectedOption}
               onChange={this.handleChange}
             />
-            <div className="input-group-append">
-              <button type="submit" className="btn btn-primary">
-                Search
-              </button>
-            </div>
+            <button type="submit" className="btn btn-primary">
+              Search
+            </button>
           </div>
         </form>
         {this.state.isGettingData ? (
@@ -77,7 +75,7 @@ class Search extends Component {
             <Information country={this.state.selectedCountry} />
           </div>
         )}
-      </React.Fragment>
+      </div>
     );
   }
 }

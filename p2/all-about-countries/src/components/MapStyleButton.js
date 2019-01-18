@@ -2,7 +2,7 @@ import React from "react";
 
 const MapStyleButton = props => {
   return (
-    <div className="form-check form-check-inline">
+    <div className="form-check form-check-inline map-style">
       <input
         className="form-check-input"
         onChange={props.handleStyleChange}
