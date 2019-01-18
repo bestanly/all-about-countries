@@ -33,7 +33,6 @@ footer {
 }
 .flag-img {
   height: auto;
-  /* border: solid 5px rgba(230, 230, 230, 0.7); */
   border: solid 1px rgba(0, 0, 0, 0.267);
 }
 .extra-info {
@@ -42,4 +41,16 @@ footer {
 
 .results {
   margin: 20px;
+  animation-name: fade-out;
+  animation-duration: 2s;
+  animation-direction: normal;
+}
+
+@keyframes fade-out {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }

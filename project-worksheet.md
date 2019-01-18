@@ -10,10 +10,10 @@ You are **responsible** for scheduling time with your squad to seek approval for
 | ----- | ---------------------------------------------------- | ---------- |
 | Day 1 | Project Description                                  | Complete   |
 | Day 1 | Wireframes / Priority Matrix / Functional Components | Complete   |
-| Day 2 | Core Application Structure (HTML, CSS, etc.)         | Incomplete |
+| Day 2 | Core Application Structure (HTML, CSS, etc.)         | Complete   |
 | Day 3 | Pseudocode / actual code                             | Complete   |
 | Day 3 | Initial Clickable Model                              | Complete   |
-| Day 4 | MVP                                                  | Incomplete |
+| Day 4 | MVP                                                  | Complete   |
 | Day 5 | Present                                              | Incomplete |
 
 ## Project Description
@@ -59,6 +59,8 @@ Based on the initial logic defined in the previous sections try and breakdown th
 | Search      |  Searches for API information with user interaction   |
 | Information |    Renders information about the selected country     |
 | Marker      | Renders a pin on the map showing the country location |
+| Header      |            Defines the header information             |
+| Footer      |            Defines the footer information             |
 
 ## Time Frames
 
@@ -68,12 +70,12 @@ Time frames are also key in the development cycle. You have limited time to code
 | ------------------------------------ | :------: | :------------: | :---------: |
 | Adding select box                    |    H     |      3hrs      |   1.5hrs    |
 | Get the API country information      |    H     |      4hrs      |    1hrs     |
-| Render the API country information   |    H     |      4hrs      |    0hrs     |
+| Render the API country information   |    H     |      4hrs      |    2hrs     |
 | Render API map                       |    H     |      4hrs      |    1hrs     |
-| Show the country location on the map |    M     |      4hrs      |    1hrs     |
-| Styling                              |    M     |      5hrs      |     0rs     |
-| PostMVPs                             |    L     |      5hrs      |   2.5hrs    |
-| Total                                |          |     29hrs      |    5hrs     |
+| Show the country location on the map |    M     |      4hrs      |    2hrs     |
+| Styling                              |    M     |      5hrs      |    3hrs     |
+| PostMVPs                             |    L     |      5hrs      |    4hrs     |
+| Total                                |          |     29hrs      |   14.5hrs   |
 
 ## API's Links
 
@@ -94,12 +96,12 @@ Helper functions should be generic enought that they can be reused in other appl
 
 Use this section to list all supporting libraries and thier role in the project.
 
-#### SAMPLE.....
-
-| Library   |           What it Does            |
-| --------- | :-------------------------------: |
-| Bootstrap | Used to help style my application |
-| Giphy API |      Used to get gifs to use      |
+| Library            |                      What it Does                       |
+| ------------------ | :-----------------------------------------------------: |
+| Bootstrap          |  Used to help style and make my application responsive  |
+| REST Countries API |            Used to get countries information            |
+| React-Select       | Used to give extra functionality in the select elements |
+| MapBoxGL           |            Used to render a map in the app.             |
 
 ## Code Snippet
 
