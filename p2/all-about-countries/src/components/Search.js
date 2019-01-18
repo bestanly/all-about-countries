@@ -53,7 +53,9 @@ class Search extends Component {
         >
           <div className="input-group">
             <Select
+              autoFocus="true"
               className="col"
+              placeholder="Select a country"
               options={this.state.countries}
               value={this.state.selectedOption}
               onChange={this.handleChange}

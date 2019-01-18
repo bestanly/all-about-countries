@@ -10,7 +10,6 @@ class App extends Component {
     return (
       <div className="app">
         <Header />
-
         <main>
           <Route path="/search/:code" component={Search} />
           <Route path="/" exact component={Search} />
