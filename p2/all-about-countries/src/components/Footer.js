@@ -3,7 +3,7 @@ const Footer = props => (
   <footer>
     <h6>
       <a href="mailto:ibestanly@gmail.com?subject=Country%20App%20feedback">
-        Tell your opinion
+        Tell me your opinion
       </a>
     </h6>
   </footer>
