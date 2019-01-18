@@ -5,7 +5,9 @@ const InformationElement = props => {
       {props.list.map((element, index) => (
         <li key={index}>
           {props.keyName ? element[props.keyName] : element}
-          {props.keySymbol ? " (" + element[props.keySymbol] + ")" : ""}
+          {props.keySymbol && element[props.keySymbol] != null
+            ? " (" + element[props.keySymbol] + ")"
+            : ""}
         </li>
       ))}
     </ul>
