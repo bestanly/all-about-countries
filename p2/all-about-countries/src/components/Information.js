@@ -2,7 +2,7 @@ import React from "react";
 import numberWithCommas from "../funtions/numberWithCommas";
 import InformationElement from "./InformationList";
 const Information = props => (
-  <div className=" col-12 row  justify-content-center info">
+  <div className="col-12 row  justify-content-center info">
     <div className="col-12 col-md-6 main-info">
       <h1 className="country-name-h title-info" style={{ textAlign: "center" }}>
         {props.country.name}

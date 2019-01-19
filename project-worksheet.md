@@ -6,15 +6,15 @@ This schedule will be used to keep track of your progress throughout the week an
 
 You are **responsible** for scheduling time with your squad to seek approval for each deliverable by the end of the corresponding day, excluding `Saturday` and `Sunday`.
 
-| Day   | Deliverable                                          | Status     |
-| ----- | ---------------------------------------------------- | ---------- |
-| Day 1 | Project Description                                  | Complete   |
-| Day 1 | Wireframes / Priority Matrix / Functional Components | Complete   |
-| Day 2 | Core Application Structure (HTML, CSS, etc.)         | Complete   |
-| Day 3 | Pseudocode / actual code                             | Complete   |
-| Day 3 | Initial Clickable Model                              | Complete   |
-| Day 4 | MVP                                                  | Complete   |
-| Day 5 | Present                                              | Incomplete |
+| Day   | Deliverable                                          | Status   |
+| ----- | ---------------------------------------------------- | -------- |
+| Day 1 | Project Description                                  | Complete |
+| Day 1 | Wireframes / Priority Matrix / Functional Components | Complete |
+| Day 2 | Core Application Structure (HTML, CSS, etc.)         | Complete |
+| Day 3 | Pseudocode / actual code                             | Complete |
+| Day 3 | Initial Clickable Model                              | Complete |
+| Day 4 | MVP                                                  | Complete |
+| Day 5 | Present                                              | Complete |
 
 ## Project Description
 
@@ -53,14 +53,16 @@ The functionality will then be divided into two separate lists: MPV and PostMVP.
 
 Based on the initial logic defined in the previous sections try and breakdown the logic further into stateless/stateful components.
 
-| Component   |                      Description                      |
-| ----------- | :---------------------------------------------------: |
-| App         |        It's going to serve as a main container        |
-| Search      |  Searches for API information with user interaction   |
-| Information |    Renders information about the selected country     |
-| Marker      | Renders a pin on the map showing the country location |
-| Header      |            Defines the header information             |
-| Footer      |            Defines the footer information             |
+| Component       |                               Description                                |
+| --------------- | :----------------------------------------------------------------------: |
+| App             |                        Serves as a main container                        |
+| Search          |            Searches for API information with user interaction            |
+| Map             |              Renders the map pointing the country selected               |
+| MapStyleButton  | Renders buttons to change map style (i.e. satellite, streets, dark, etc) |
+| Information     |              Renders information about the selected country              |
+| InformationList |          Renders varios items in the same piece of information           |
+| Header          |                      Defines the header information                      |
+| Footer          |                      Defines the footer information                      |
 
 ## Time Frames
 
@@ -86,11 +88,9 @@ Time frames are also key in the development cycle. You have limited time to code
 
 Helper functions should be generic enought that they can be reused in other applications. Use this section to document all helper functions that fall into this category.
 
-#### SAMPLE.....
-
-| Function   |                        Description                        |
-| ---------- | :-------------------------------------------------------: |
-| Capitalize | This will capitalize the first letter in a string of text |
+| Function |                                  Description                                  |
+| -------- | :---------------------------------------------------------------------------: |
+| map      | takes an array, takes a function as a parameter and return the modified array |
 
 ## Additional Libraries
 
@@ -107,29 +107,28 @@ Use this section to list all supporting libraries and thier role in the project.
 
 Use this section to include a brief code snippet of functionality that you are proud of an a brief description
 
-#### SAMPLE.....
-
 ```
-function reverse(string) {
-	// here is the code to reverse a string of text
-}
+const numberWithCommas = x => {
+  return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+};
+
+// this function add commas as a separator in numbers.
+// source: https://stackoverflow.com/questions/2901102/how-to-print-a-number-with-commas-as-thousands-separators-in-javascript
+export default numberWithCommas;
+
 ```
 
 ## Change Log
 
 Use this section to document what changes were made and the reasoning behind those changes.
 
-#### SAMPLE.....
-
-| Original Plan           |                                           Outcome                                            |
-| ----------------------- | :------------------------------------------------------------------------------------------: |
-| Have one Book component | Split that component into BookInfo and BookInteraction as the component grew too complicated |
+| Original Plan                  |                                      Outcome                                       |
+| ------------------------------ | :--------------------------------------------------------------------------------: |
+| Have one Information component | I added another component to render several items in the same information category |
 
 ## Issues and Resolutions
 
 Use this section to list of all major issues encountered and their resolution.
 
-#### SAMPLE.....
-
-**ERROR**: app.js:34 Uncaught SyntaxError: Unexpected identifier  
-**RESOLUTION**: Missing comma after first object in sources {} object
+**ERROR**: Map returning to default when zooming in or out.
+**RESOLUTION**: adding the previous state to the onViewPortChange event.
